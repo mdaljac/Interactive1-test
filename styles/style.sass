@@ -1,0 +1,400 @@
+@import 'bourbon/_bourbon.scss'
+
+*
+	margin: 0
+	padding: 0
+	font-family: Arial
+
+span.blue a
+	color: #039dc5
+	text-decoration: none
+	font-size: 12px
+
+span.white
+	color: white
+	font-size: 12px
+
+ul
+	list-style-type: none
+	li
+		display: inline-block
+		a
+			display: inline-block	
+			text-transform: uppercase
+			text-decoration: none
+			color: #ffffff
+			font-weight: bold
+
+.top-menu-text, .content-wrapper
+	max-width: 940px
+	margin: 0 auto
+
+header, nav ul, .first-block, .second-block, .third-block, .news-article, .locations, span.icons, .slider
+	+display(flex)
+
+.choose-us, .challenges, .meet-us
+	background-color: #f1f1f2
+
+%content-p
+	font-size: 14px
+	line-height: 20px
+	color: #656666
+
+%h2-link
+	display: inline-block
+	color: #00c0f3
+	text-decoration: none
+	font-size: 1.15em
+	margin-bottom: 5px
+	line-height: 27px
+
+%icon
+	position: absolute
+	width: 15px
+	height: 25px
+
+body
+	background-color: #000000
+
+	.wrapper
+		width: 100%
+
+		.top-menu
+			width: 100%
+			border-bottom: 1px solid rgba(63, 63, 63, 0.8)
+			+clearfix()
+
+			.top-menu-text
+				ul
+					float: right
+					padding: 15px 0px
+
+					li
+						height: 15px
+						padding-left: 15px
+						text-align: center
+						line-height: 15px
+						
+						&:not(:last-child)
+							border-right: 1px solid grey
+							padding-right: 15px
+						
+						a
+							font-size: 12px
+						
+		.content-wrapper
+			header
+				+align-items(flex-end)
+				padding: 20px 0px 40px 25px
+
+				.logo
+					height: 50px
+					width: 20%
+					line-height: 50px
+					color: white
+					font-size: 65px
+					margin-right: 20px
+
+				nav
+					width: 80%
+					ul
+						+align-items(center)
+						+justify-content(space-between)
+
+						li
+							padding-top: 10px
+							box-sizing: border-box
+							+transition()
+
+							&:hover
+								box-shadow: 0px -2px 0px 0px #00c0f3
+
+			.content
+				padding-bottom: 20px
+
+				.first-block
+					height: 315px
+					overflow: hidden
+					border-top: 1px solid rgba(63, 63, 63, 0.5)
+
+					.hq-wrapper
+						width: 380px
+						position: relative
+
+						.ceo, .director
+							position: relative
+							span
+								position: absolute
+								width: 90px
+								z-index: 2
+
+							img
+								position: absolute
+								display: inline-block
+								z-index: 1
+
+								&.ceo-image
+									top: 40px
+								&.dir-image
+									top: 20px
+									left: 200px
+
+						.ceo span
+							left: 15px
+							&.ceo-name
+								top: 130px
+							&.position
+								top: 145px
+						.director span
+							left: 300px
+							&.dir-name
+								top: 70px
+							&.position
+								top: 85px
+
+						.border-div
+							border-left: 1px solid rgba(63, 63, 63, 0.5)
+							position: absolute
+							top: 0
+							bottom: 5%
+
+					.title
+						max-width: 250px
+						padding: 30px 45px 65px 100px
+						position: relative
+						+background(linear-gradient(left top, black 30%, rgba(42, 42, 42, 0.9)))
+
+						img
+							position: absolute
+							left: 80px
+							top: 35px
+
+						h1
+							color: white
+							font-size: 30px
+							line-height: 35px
+							margin-bottom: 30px
+
+						a
+							color: #039dc5
+
+					.choose-us
+						max-width: 210px
+						padding: 25px 30px 45px 20px
+						position: relative
+
+						img
+							@extend %icon
+							top: 35px
+							left: -2px
+
+						h2
+							color: #656666
+
+						p
+							@extend %content-p
+							margin: 10px 0px 15px 0px
+
+						a
+							color: #00c0f3
+							line-height: 20px
+							font-weight: 600
+
+				.second-block
+					.sectors, .lorem-lamp
+						+flex(1)
+
+					.challenges
+						+flex(1.1)
+
+					.sectors
+						background-color: #ffffff
+
+					.lorem-lamp
+						+background(linear-gradient(top, black 20%, rgba(42, 42, 42, 0.9)))
+
+					.sectors-wrap h2
+						width: 160px
+					.challenges-wrap h2
+						width: 130px
+
+					.sectors-wrap, .challenges-wrap
+						margin: 30px 50px 30px 20px
+
+						h2 a
+							@extend %h2-link
+
+						p
+							@extend %content-p
+
+					.challenges-wrap
+						margin: 30px 80px 30px 20px
+
+					.lorem-lamp, .challenges
+						position: relative
+						overflow: hidden
+						img
+							position: absolute
+
+					.challenges img
+						@extend %icon
+						top: 50px
+						right: -2px
+
+					.lorem-lamp img
+						right: 55px
+						bottom: -35px
+
+					.lorem-lamp .lamp-text
+						position: absolute
+						left: 20px
+						bottom: 20px
+
+						span
+							display: block
+
+				.third-block
+					.news
+						background-color: #00c0f3
+						color: white
+						padding: 40px 30px 25px 20px
+						+flex(2.1)
+
+						h2
+							width: 90px
+							margin-bottom: 10px
+							font-weight: 400
+							line-height: 22px
+
+						.news-article
+							+justify-content(space-between)
+
+							p
+								max-width: 190px
+								font-size: 14px
+								line-height: 20px
+
+								a
+									display: block
+									color: white
+									margin-top: 20px
+
+					.pro-block
+						+flex(1.2)
+						position: relative
+						overflow: hidden
+						+background(linear-gradient(bottom right, black 20%, rgba(42, 42, 42, 0.9)))
+
+						.pro-text 
+							z-index: 2
+							position: absolute
+							top: 170px
+							left: 30px
+							span
+								display: block
+
+						img
+							position: absolute
+							z-index: 1
+							bottom: -75px
+							right: -75px
+
+					.meet-us
+						+flex(0.97)
+						position: relative
+						padding: 40px 25px 10px 20px
+
+						img
+							@extend %icon
+							top: 55px
+							left: -2px
+
+						h2 a
+							width: 60px
+							@extend %h2-link
+
+						p
+							@extend %content-p
+
+				.locations
+					margin-top: 50px
+
+					> div
+						padding-top: 10px
+						color: #ffffff
+						border-top: 2px solid #00c0f3
+						+flex(1)
+
+						&:not(:last-child)
+							margin-right: 20px
+
+						h3
+							margin-bottom: 15px
+
+						address
+							line-height: 22px
+							font-style: normal
+
+						span
+							display: block
+
+							a
+								color: #00c0f3
+								text-decoration: none
+								line-height: 22px
+
+							&.icons
+								+align-items(flex-end)
+
+								a
+									margin-right: 10px
+		
+				.awards
+					margin-top: 40px
+					color: white
+
+					h3
+						margin-bottom: 15px
+
+					.slider
+						width: 400px
+						+justify-content(space-between)
+						
+						.slick-arrow
+							height: 25px
+							position: absolute
+							top: 50%
+							margin-top: -12.50px
+							cursor: pointer
+
+							&.next-icon
+								right: 0
+
+						.slick-list
+							margin-left: 35px
+							margin-right: 25px
+
+							.slick-track
+								+display(flex)
+
+								.slick-slide
+									margin-right: 10px
+									width: 100%
+									height: auto !important
+									+filter(grayscale(1))
+
+		.bottom-info
+			width: 100%
+			border-top: 1px solid rgba(63, 63, 63, 0.8)
+			padding: 20px 0px 40px 0px
+
+			.bottom-info-text
+				max-width: 940px
+				margin: 0 auto
+
+				p
+					max-width: 380px
+					color: #ffffff
+					text-transform: uppercase
+					font-size: 11px
+					line-height: 15px
